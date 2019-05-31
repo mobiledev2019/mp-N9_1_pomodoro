@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_news"
+        android:iconTint="@android:color/white"
+        android:icon="@drawable/ic_action_job"
+        android:title="To do"
+        />
+    <item android:id="@+id/action_fights"
+        android:iconTint="@android:color/white"
+        android:icon="@drawable/ic_action_done_job"
+        android:title="Done"
+        />
+    <item android:id="@+id/action_result"
+        android:iconTint="@android:color/white"
+        android:icon="@drawable/ic_action_chart"
+        android:title="Stats"
+        />
+</menu>

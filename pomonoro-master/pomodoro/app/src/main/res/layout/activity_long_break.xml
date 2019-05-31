@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.todo.CountdownActivity">
+    <RelativeLayout
+        android:id="@+id/layout_ads"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"/>
+    <RelativeLayout
+        android:layout_above="@id/layout_ads"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_50sdp"
+                android:background="@drawable/tool_bar_style"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:id="@+id/img_back"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_back" />
+                <ImageView
+                    android:visibility="invisible"
+                    android:id="@+id/img_back_focus"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_action_back_forcus" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/long_break_duration"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/_20sdp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_back"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.433" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            <Button
+                android:visibility="visible"
+                android:id="@+id/btn_start"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:background="#333333"
+                android:text="@string/start"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/layout_stop_pause"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <Button
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/focus_button"
+                    android:id="@+id/btn_stop"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/stop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btn_pause"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:background="@drawable/focus_button"
+                    android:id="@+id/btn_pause"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:text="@string/pause"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btn_stop"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:textSize="@dimen/_14sdp"
+                    android:id="@+id/btn_resume"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/text_count"
+                    android:text="@string/resume"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/btn_stop"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </android.support.constraint.ConstraintLayout>
+
+            <com.demo.pomodoro.countdownlib.countdowncircleprogress.CountDownCircleProgressView
+                android:id="@+id/progress_bar_2"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                app:layout_constraintBottom_toTopOf="@+id/btn_start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.496"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+                app:layout_constraintVertical_bias="0.44"
+                custom:donut_unfinished_color="@color/gray"
+                custom:donut_unfinished_stroke_width="@dimen/_5sdp"
+                custom:donut_progress="0"
+                custom:donut_finished_color="@color/text_count"
+                custom:donut_finished_stroke_width="@dimen/_5sdp"
+                custom:donut_circle_starting_degree="270"/>
+            <ImageView
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/circle_count_down"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_200sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/progress_bar_2"
+                app:layout_constraintEnd_toEndOf="@+id/progress_bar_2"
+                app:layout_constraintStart_toStartOf="@+id/progress_bar_2"
+                app:layout_constraintTop_toTopOf="@+id/progress_bar_2" />
+            <TextView
+                android:id="@+id/txt_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:00"
+                android:textColor="@color/text"
+                android:textSize="@dimen/_50sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/progress_bar_2"
+                app:layout_constraintEnd_toEndOf="@+id/progress_bar_2"
+                app:layout_constraintStart_toStartOf="@+id/progress_bar_2"
+                app:layout_constraintTop_toTopOf="@+id/progress_bar_2" />
+
+            <Button
+                android:background="@drawable/focus_button"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:id="@+id/btn_complete"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_50sdp"
+                android:text="@string/complete"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
