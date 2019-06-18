@@ -214,6 +214,7 @@ public class StatsActivity extends AppCompatActivity implements NavigationView.O
         btnStats.setBackgroundResource(R.color.text);
         txtStatsBottom.setTextColor(Color.WHITE);
         imgIconStats.setImageResource(R.drawable.ic_stats_hover);
+
         PomodoroDb db = new PomodoroDb(this);
         jan = (int) db.getCountMonth("1");
         feb = (int) db.getCountMonth("2");
